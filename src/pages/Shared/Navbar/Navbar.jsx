@@ -39,7 +39,7 @@ const Navbar = () => {
 
                 <HiOutlineShoppingBag className='w-7 h-7' />
                 <LuSearch className='w-7 h-7' />
-                <button className="py-2 px-5 text-xl font-semibold rounded-lg hover:bg-red-600 text-red-500 hover:text-white border  border-red-500">Appointment</button>
+                <button className="py-2 px-5 text-xl font-semibold rounded-lg hover:bg-[#FF3811] text-[#FF3811] hover:text-white border  border-[#FF3811]">Appointment</button>
             </div>
         </div>
     );
