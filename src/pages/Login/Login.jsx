@@ -1,9 +1,13 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import loginImg from '../../assets/images/login/login.svg'
 import { Link } from 'react-router-dom';
 import { FaFacebook, FaGoogle, FaLinkedin } from 'react-icons/fa';
+import { AuthContext } from '../../providers/AuthProvider';
+import Swal from 'sweetalert2';
 
 const Login = () => {
+
+    const { signIn } = useContext(AuthContext);
 
     const handleLogin = event => {
         event.preventDefault();
@@ -11,6 +15,33 @@ const Login = () => {
         const email = form.email.value;
         const password = form.password.value;
         console.log(email, password)
+
+        // sign in method
+        signIn(email, password)
+            .then(result => {
+                const loggedInUser = result.user;
+                console.log(loggedInUser)
+
+                // ==================== Success Alert
+                Swal.fire({
+                    title: 'Success!',
+                    text: 'Successfully Log In!',
+                    icon: 'success',
+                    confirmButtonText: 'Ok'
+                })
+                // ==================== Success Alert
+            })
+            .catch(error => {
+                console.log(error.message)
+                // ==================== Error Alert
+                Swal.fire({
+                    title: 'error!',
+                    text: 'Log In not Successfully! Email or Password not Matched! Please Try Again!',
+                    icon: 'error',
+                    confirmButtonText: 'Ok'
+                })
+                // ==================== Error Alert
+            })
 
     }
 
