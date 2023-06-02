@@ -14,8 +14,8 @@ const Carousel = () => {
             <div id="slide1" className="carousel-item relative w-full">
                 <img style={{ height: '512px' }} className='w-full object-cover object-top rounded-lg' src={img1} />
                 <div className="absolute rounded-lg flex items-center w-full h-full left-0 top-0 bg-gradient-to-r from-[#000000] to-[#57575711]">
-                    <div className='text-white w-1/2 pl-12'>
-                        <h2 className='text-7xl font-bold mb-5'>Affordable <br /> Price For Car <br /> Servicing</h2>
+                    <div className='text-white md:w-1/2 w-3/4 pl-12'>
+                        <h2 className='md:text-7xl text-4xl font-bold md:mb-5 mb-3'>Affordable Price For Car Servicing</h2>
                         <p className='text-xl'>There are many variations of passages of  available, but <br /> the majority have suffered alteration in some form</p>
                         <div className='mt-5 flex gap-5'>
                             <button className="py-3 px-6 text-xl font-semibold rounded-lg hover:bg-white bg-[#FF3811] text-white hover:text-[#FF3811] ">Discover More</button>
@@ -37,8 +37,8 @@ const Carousel = () => {
             <div id="slide2" className="carousel-item relative w-full">
                 <img style={{ height: '512px' }} className='w-full object-cover object-top rounded-lg' src={img2} />
                 <div className="absolute rounded-lg flex items-center w-full h-full left-0 top-0 bg-gradient-to-r from-[#000000] to-[#57575711]">
-                    <div className='text-white w-1/2 pl-12'>
-                        <h2 className='text-7xl font-bold mb-5'>Affordable <br /> Price For Car <br /> Servicing</h2>
+                    <div className='text-white md:w-1/2 w-3/4 pl-12'>
+                        <h2 className='md:text-7xl text-4xl font-bold md:mb-5 mb-3'>Affordable Price For Car Servicing</h2>
                         <p className='text-xl'>There are many variations of passages of  available, but <br /> the majority have suffered alteration in some form</p>
                         <div className='mt-5 flex gap-5'>
                             <button className="py-3 px-6 text-xl font-semibold rounded-lg hover:bg-white bg-[#FF3811] text-white hover:text-[#FF3811] ">Discover More</button>
@@ -60,8 +60,8 @@ const Carousel = () => {
             <div id="slide3" className="carousel-item relative w-full">
                 <img style={{ height: '512px' }} className='w-full object-cover object-top rounded-lg' src={img3} />
                 <div className="absolute rounded-lg flex items-center w-full h-full left-0 top-0 bg-gradient-to-r from-[#000000] to-[#57575711]">
-                    <div className='text-white w-1/2 pl-12'>
-                        <h2 className='text-7xl font-bold mb-5'>Affordable <br /> Price For Car <br /> Servicing</h2>
+                    <div className='text-white md:w-1/2 w-3/4 pl-12'>
+                        <h2 className='md:text-7xl text-4xl font-bold md:mb-5 mb-3'>Affordable Price For Car Servicing</h2>
                         <p className='text-xl'>There are many variations of passages of  available, but <br /> the majority have suffered alteration in some form</p>
                         <div className='mt-5 flex gap-5'>
                             <button className="py-3 px-6 text-xl font-semibold rounded-lg hover:bg-white bg-[#FF3811] text-white hover:text-[#FF3811] ">Discover More</button>
@@ -83,8 +83,8 @@ const Carousel = () => {
             <div id="slide4" className="carousel-item relative w-full">
                 <img style={{ height: '512px' }} className='w-full object-cover object-top rounded-lg' src={img4} />
                 <div className="absolute rounded-lg flex items-center w-full h-full left-0 top-0 bg-gradient-to-r from-[#000000] to-[#57575711]">
-                    <div className='text-white w-1/2 pl-12'>
-                        <h2 className='text-7xl font-bold mb-5'>Affordable <br /> Price For Car <br /> Servicing</h2>
+                    <div className='text-white md:w-1/2 w-3/4 pl-12'>
+                        <h2 className='md:text-7xl text-4xl font-bold md:mb-5 mb-3'>Affordable Price For Car Servicing</h2>
                         <p className='text-xl'>There are many variations of passages of  available, but <br /> the majority have suffered alteration in some form</p>
                         <div className='mt-5 flex gap-5'>
                             <button className="py-3 px-6 text-xl font-semibold rounded-lg hover:bg-white bg-[#FF3811] text-white hover:text-[#FF3811] ">Discover More</button>
@@ -106,8 +106,8 @@ const Carousel = () => {
             <div id="slide5" className="carousel-item relative w-full">
                 <img style={{ height: '512px' }} className='w-full object-cover object-top rounded-lg' src={img5} />
                 <div className="absolute rounded-lg flex items-center w-full h-full left-0 top-0 bg-gradient-to-r from-[#000000] to-[#57575711]">
-                    <div className='text-white w-1/2 pl-12'>
-                        <h2 className='text-7xl font-bold mb-5'>Affordable <br /> Price For Car <br /> Servicing</h2>
+                    <div className='text-white md:w-1/2 w-3/4 pl-12'>
+                        <h2 className='md:text-7xl text-4xl font-bold md:mb-5 mb-3'>Affordable Price For Car Servicing</h2>
                         <p className='text-xl'>There are many variations of passages of  available, but <br /> the majority have suffered alteration in some form</p>
                         <div className='mt-5 flex gap-5'>
                             <button className="py-3 px-6 text-xl font-semibold rounded-lg hover:bg-white bg-[#FF3811] text-white hover:text-[#FF3811] ">Discover More</button>
@@ -129,8 +129,8 @@ const Carousel = () => {
             <div id="slide6" className="carousel-item relative w-full">
                 <img style={{ height: '512px' }} className='w-full object-cover object-top rounded-lg' src={img6} />
                 <div className="absolute rounded-lg flex items-center w-full h-full left-0 top-0 bg-gradient-to-r from-[#000000] to-[#57575711]">
-                    <div className='text-white w-1/2 pl-12'>
-                        <h2 className='text-7xl font-bold mb-5'>Affordable <br /> Price For Car <br /> Servicing</h2>
+                    <div className='text-white md:w-1/2 w-3/4 pl-12'>
+                        <h2 className='md:text-7xl text-4xl font-bold md:mb-5 mb-3'>Affordable Price For Car Servicing</h2>
                         <p className='text-xl'>There are many variations of passages of  available, but <br /> the majority have suffered alteration in some form</p>
                         <div className='mt-5 flex gap-5'>
                             <button className="py-3 px-6 text-xl font-semibold rounded-lg hover:bg-white bg-[#FF3811] text-white hover:text-[#FF3811] ">Discover More</button>
