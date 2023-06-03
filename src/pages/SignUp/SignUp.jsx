@@ -36,7 +36,7 @@ const SignUp = () => {
                 // ==================== Error Alert
                 Swal.fire({
                     title: 'error!',
-                    text: 'Registration not Successfully! Please Try Again!',
+                    text: 'Registration not Successful! Please Try Again!',
                     icon: 'error',
                     confirmButtonText: 'Ok'
                 })

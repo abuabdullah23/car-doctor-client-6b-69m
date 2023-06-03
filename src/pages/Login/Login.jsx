@@ -37,7 +37,7 @@ const Login = () => {
                 // ==================== Error Alert
                 Swal.fire({
                     title: 'error!',
-                    text: 'Log In not Successfully! Email or Password not Matched! Please Try Again!',
+                    text: 'Log In not Successful! Email or Password not Matched! Please Try Again!',
                     icon: 'error',
                     confirmButtonText: 'Ok'
                 })
