@@ -4,6 +4,7 @@ import { Link } from 'react-router-dom';
 import { useContext } from 'react';
 import { AuthContext } from '../../providers/AuthProvider';
 import Swal from 'sweetalert2';
+import SocialLogin from '../../components/SocialLogin';
 
 const SignUp = () => {
     const { createUser } = useContext(AuthContext);
@@ -70,11 +71,7 @@ const SignUp = () => {
                 <div className='text-center mt-5'>
                     <p>Or Sign Up with</p>
 
-                    <div className='flex gap-3 justify-center my-5'>
-                        <p className='bg-slate-300 rounded-full p-2 text-center text-blue-700'><FaFacebook className='w-6 h-6' /></p>
-                        <p className='bg-slate-300 rounded-full p-2 text-center text-blue-500'><FaLinkedin className='w-6 h-6' /></p>
-                        <p className='bg-slate-300 rounded-full p-2 text-center text-[#009914]'><FaGoogle className='w-6 h-6' /></p>
-                    </div>
+                    <SocialLogin/>
 
                     <p>Already have an account?
                         <span className='font-bold text-[#FF3811]'>
