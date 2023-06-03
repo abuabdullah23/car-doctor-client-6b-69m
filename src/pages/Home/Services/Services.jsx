@@ -14,7 +14,7 @@ const Services = () => {
     return (
         <div className='my-10'>
             <div className='flex justify-center mb-10'>
-                <div className='text-center md:w-1/2'>
+                <div className='text-center md:w-1/2 px-5'>
                     <h3 className='text-[#FF3811] text-2xl font-bold'>Service</h3>
                     <h2 className='text-5xl font-bold my-5'>Our Service Area</h2>
                     <p className=' '>the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable. </p>
