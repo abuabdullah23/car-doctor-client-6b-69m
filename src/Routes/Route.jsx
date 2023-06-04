@@ -8,6 +8,7 @@ import CheckOut from "../pages/CheckOut/CheckOut";
 import AddNewService from "../pages/AddNewService/AddNewService";
 import BookingCart from "../pages/BookingCart/BookingCart";
 import PrivateRoute from "./PrivateRoute";
+import Services from "../pages/Home/Services/Services";
 
 const router = createBrowserRouter([
     {

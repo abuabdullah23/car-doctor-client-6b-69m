@@ -64,7 +64,7 @@ const AddNewService = () => {
                     <p className='mt-5 ps-5 text-xl font-semibold'>Product Description</p>
                     <textarea className='py-3 px-5 rounded-md border border-slate-300 w-full mt-2' type="text" name="productDescription" id="productDescription" placeholder='productDescription' cols="30" rows="10"></textarea>
                 </div>
-                <button className='w-full py-3 px-5 bg-[#FF3811] rounded-lg mt-5 text-xl font-semibold text-white hover:bg-[#eb2c05]' type='submit'>Add New Service</button>
+                <button className='w-full py-3 px-5 bg-[#FF3811] rounded-lg mt-5 text-xl font-semibold text-white hover:bg-[#e02500]' type='submit'>Add New Service</button>
 
             </form>
 

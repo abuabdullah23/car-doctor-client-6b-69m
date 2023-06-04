@@ -1,7 +1,10 @@
 import React, { useContext, useEffect, useState } from 'react';
 import { AuthContext } from '../../providers/AuthProvider';
 import bannerBookingCart from '../../assets/images/checkout/checkout.png'
-
+import SingleCart from './singleCart';
+import { FaArrowLeft, FaTrash } from 'react-icons/fa';
+import { Link } from 'react-router-dom';
+import Swal from 'sweetalert2';
 
 const BookingCart = () => {
     const { user } = useContext(AuthContext);
@@ -17,6 +20,47 @@ const BookingCart = () => {
             .then(data => setBookingCart(data))
     }, [])
 
+    //============= handle clear all data
+    const handleClearAllCart = () => {
+        Swal.fire({
+            title: 'Are You Sure Delete All Data From Cart?',
+            text: "You won't be able to revert this!",
+            icon: 'warning',
+            showCancelButton: true,
+            confirmButtonColor: '#3085d6',
+            cancelButtonColor: '#d33',
+            confirmButtonText: 'Yes, delete it!'
+        }).then((result) => {
+            if (result.isConfirmed) {
+                fetch('http://localhost:5000/checkout-info/', {
+                    method: 'DELETE'
+                })
+                    .then(res => res.json())
+                    .then(data => {
+                        console.log(data)
+                        if (data.deletedCount > 0) {
+                            Swal.fire(
+                                'Deleted!',
+                                'Your file has been deleted.',
+                                'success'
+                            )
+                        } else if (data.deletedCount < 1) {
+                            // ==================== Error Alert
+                            Swal.fire({
+                                title: 'Oooooooooooops!',
+                                text: 'Have not Delete All Shopping Cart!',
+                                icon: 'error',
+                                confirmButtonText: 'Ok'
+                            })
+                            // ==================== Error Alert
+                        }
+                        // const remainingCart = bookingCart.filter(booking => booking._id !== id)
+                        // setBookingCart(remainingCart)
+                    })
+            }
+        })
+    }
+
     return (
         <div>
             <div className='relative'>
@@ -29,63 +73,43 @@ const BookingCart = () => {
                 </div>
             </div>
 
-            <h2>Loaded Checkout Booking cart : {bookingCart.length} </h2>
-
-            <div className="overflow-x-auto">
+            <div className="overflow-x-auto mt-20">
                 <table className="table">
                     {/* head */}
                     <thead>
                         <tr>
                             <th>
-                                <label>
-                                    <input type="checkbox" className="checkbox" />
-                                </label>
+
                             </th>
-                            <th>Image</th>
-                            <th>Name</th>
+                            <th>Service Image</th>
+                            <th>Service Name</th>
+                            <th>Customer Email</th>
                             <th>Price</th>
-                            <th>Date</th>
+                            <th>Delivery Date</th>
                             <th>Status</th>
                         </tr>
                     </thead>
                     <tbody>
-                        {/* row 1 */}
-                        <tr>
-                            <th>
-                                <label>
-                                    <input type="checkbox" className="checkbox" />
-                                </label>
-                            </th>
-                            <td>
-                                <div className="flex items-center space-x-3">
-                                    <div className="avatar">
-                                        <div className="mask mask-squircle w-12 h-12">
-                                            <img src="/tailwind-css-component-profile-2@56w.png" alt="Avatar Tailwind CSS Component" />
-                                        </div>
-                                    </div>
-                                    <div>
-                                        <div className="font-bold">Hart Hagerty</div>
-                                        <div className="text-sm opacity-50">United States</div>
-                                    </div>
-                                </div>
-                            </td>
-                            <td>
-                                Zemlak, Daniel and Leannon
-                                <br />
-                                <span className="badge badge-ghost badge-sm">Desktop Support Technician</span>
-                            </td>
-                            <td>Purple</td>
-                            <th>
-                                <button className="btn btn-ghost btn-xs">details</button>
-                            </th>
-                        </tr>
-                     
-                       
+                        {/* rows of booking cart */}
+                        {
+                            bookingCart.map(cart => <SingleCart
+                                key={cart._id}
+                                cart={cart}
+                                bookingCart={bookingCart}
+                                setBookingCart={setBookingCart}
+                            ></SingleCart>)
+                        }
                     </tbody>
-                    {/* foot */}
-                    
-
                 </table>
+            </div>
+
+            <div className='flex justify-between items-center md:px-20 px-5 py-5'>
+                <Link to="/"><button className='py-2 px-4 rounded-md flex items-center gap-4 hover:bg-[#FF3811] hover:text-white'> <FaArrowLeft /> Continue Shopping</button></Link>
+
+                {/* Logical rendering, when booking cart is greater then 1, it will show. */}
+                {
+                    bookingCart.length > 1 && <button onClick={handleClearAllCart} className='py-2 px-4 rounded-md flex items-center gap-4 hover:bg-[#FF3811] hover:text-white'> <FaTrash /> Clear Shopping Cart</button>
+                }
             </div>
         </div>
     );

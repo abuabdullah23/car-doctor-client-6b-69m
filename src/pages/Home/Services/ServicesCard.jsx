@@ -18,7 +18,7 @@ const ServicesCard = ({ service }) => {
 
             <div className='text-[#FF3811] flex items-center justify-between mt-4'>
                 <h3 className='font-semibold text-xl'>Price: ${price}</h3>
-                <Link to={`services/checkout/${_id}`} ><button className='py-2 px-4 font-semibold rounded-md bg-[#ffede7] hover:bg-[#FF3811] hover:text-white'>Book Now</button></Link>
+                <Link to={`services/checkout/${_id}`} ><button className='py-2 px-4 font-semibold rounded-md bg-[#ffede7] hover:bg-[#e02500] hover:text-white'>Book Now</button></Link>
 
                 <Link to={`/service-details/${_id}`} ><button className='rounded-full bg-[#ffede7] hover:bg-[#FF3811] hover:text-white p-3'><FaArrowRight/></button></Link>
             </div>

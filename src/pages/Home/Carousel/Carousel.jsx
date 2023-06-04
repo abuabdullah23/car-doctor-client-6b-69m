@@ -28,7 +28,7 @@ const Carousel = () => {
                 <div className="absolute flex gap-5 transform -translate-y-1/2 end-10 right-10 bottom-10">
                     <a href="#slide6" className='w-16 h-16 flex items-center justify-center bg-[#ffffffc5] hover:bg-[#ffffff85] rounded-full p-5'>
                         <FaArrowLeft className='w-4 h-4 text-[#FF3811]' /></a>
-                    <a href="#slide2" className='w-16 h-16 flex items-center justify-center bg-[#FF3811] hover:bg-[#d62400] rounded-full p-5'>
+                    <a href="#slide2" className='w-16 h-16 flex items-center justify-center bg-[#FF3811] hover:bg-[#e02500] rounded-full p-5'>
                         <FaArrowRight className='w-4 h-4 text-white' /> </a>
                 </div>
             </div>
@@ -51,7 +51,7 @@ const Carousel = () => {
                 <div className="absolute flex gap-5 transform -translate-y-1/2 end-10 right-10 bottom-10">
                     <a href="#slide1" className='w-16 h-16 flex items-center justify-center bg-[#ffffffc5] hover:bg-[#ffffff85] rounded-full p-5'>
                         <FaArrowLeft className='w-4 h-4 text-[#FF3811]' /></a>
-                    <a href="#slide3" className='w-16 h-16 flex items-center justify-center bg-[#FF3811] hover:bg-[#d62400] rounded-full p-5'>
+                    <a href="#slide3" className='w-16 h-16 flex items-center justify-center bg-[#FF3811] hover:bg-[#e02500] rounded-full p-5'>
                         <FaArrowRight className='w-4 h-4 text-white' /> </a>
                 </div>
             </div>
@@ -74,7 +74,7 @@ const Carousel = () => {
                 <div className="absolute flex gap-5 transform -translate-y-1/2 end-10 right-10 bottom-10">
                     <a href="#slide2" className='w-16 h-16 flex items-center justify-center bg-[#ffffffc5] hover:bg-[#ffffff85] rounded-full p-5'>
                         <FaArrowLeft className='w-4 h-4 text-[#FF3811]' /></a>
-                    <a href="#slide4" className='w-16 h-16 flex items-center justify-center bg-[#FF3811] hover:bg-[#d62400] rounded-full p-5'>
+                    <a href="#slide4" className='w-16 h-16 flex items-center justify-center bg-[#FF3811] hover:bg-[#e02500] rounded-full p-5'>
                         <FaArrowRight className='w-4 h-4 text-white' /> </a>
                 </div>
             </div>
@@ -97,7 +97,7 @@ const Carousel = () => {
                 <div className="absolute flex gap-5 transform -translate-y-1/2 end-10 right-10 bottom-10">
                     <a href="#slide3" className='w-16 h-16 flex items-center justify-center bg-[#ffffffc5] hover:bg-[#ffffff85] rounded-full p-5'>
                         <FaArrowLeft className='w-4 h-4 text-[#FF3811]' /></a>
-                    <a href="#slide5" className='w-16 h-16 flex items-center justify-center bg-[#FF3811] hover:bg-[#d62400] rounded-full p-5'>
+                    <a href="#slide5" className='w-16 h-16 flex items-center justify-center bg-[#FF3811] hover:bg-[#e02500] rounded-full p-5'>
                         <FaArrowRight className='w-4 h-4 text-white' /> </a>
                 </div>
             </div>
@@ -120,7 +120,7 @@ const Carousel = () => {
                 <div className="absolute flex gap-5 transform -translate-y-1/2 end-10 right-10 bottom-10">
                     <a href="#slide4" className='w-16 h-16 flex items-center justify-center bg-[#ffffffc5] hover:bg-[#ffffff85] rounded-full p-5'>
                         <FaArrowLeft className='w-4 h-4 text-[#FF3811]' /></a>
-                    <a href="#slide6" className='w-16 h-16 flex items-center justify-center bg-[#FF3811] hover:bg-[#d62400] rounded-full p-5'>
+                    <a href="#slide6" className='w-16 h-16 flex items-center justify-center bg-[#FF3811] hover:bg-[#e02500] rounded-full p-5'>
                         <FaArrowRight className='w-4 h-4 text-white' /> </a>
                 </div>
             </div>
@@ -143,7 +143,7 @@ const Carousel = () => {
                 <div className="absolute flex gap-5 transform -translate-y-1/2 end-10 right-10 bottom-10">
                     <a href="#slide5" className='w-16 h-16 flex items-center justify-center bg-[#ffffffc5] hover:bg-[#ffffff85] rounded-full p-5'>
                         <FaArrowLeft className='w-4 h-4 text-[#FF3811]' /></a>
-                    <a href="#slide1" className='w-16 h-16 flex items-center justify-center bg-[#FF3811] hover:bg-[#d62400] rounded-full p-5'>
+                    <a href="#slide1" className='w-16 h-16 flex items-center justify-center bg-[#FF3811] hover:bg-[#e02500] rounded-full p-5'>
                         <FaArrowRight className='w-4 h-4 text-white' /> </a>
                 </div>
             </div>

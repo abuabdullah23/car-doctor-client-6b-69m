@@ -94,14 +94,14 @@ const CheckOut = () => {
                         </div>
                         <div className='w-full'>
                             <p className='mt-5 ps-5 text-xl font-semibold'>Your Email</p>
-                            <input required type="email" name="email" id="email" placeholder='Your Email' defaultValue={user?.email} className='py-3 px-5 rounded-md border border-slate-300 w-full mt-2' />
+                            <input required readOnly type="email" name="email" id="email" placeholder='Your Email' defaultValue={user?.email} className='py-3 px-5 rounded-md border border-slate-300 w-full mt-2' />
                         </div>
                     </div>
                     <div className='w-full'>
                         <p className='mt-5 ps-5 text-xl font-semibold'>Your Message</p>
                         <textarea className='py-3 px-5 rounded-md border border-slate-300 w-full mt-2' type="text" name="message" id="message" placeholder='Message' cols="30" rows="10"></textarea>
                     </div>
-                    <button className='w-full py-3 px-5 bg-[#FF3811] rounded-lg mt-5 text-xl font-semibold text-white hover:bg-[#eb2c05]' type='submit'>Order Confirm</button>
+                    <button className='w-full py-3 px-5 bg-[#FF3811] rounded-lg mt-5 text-xl font-semibold text-white hover:bg-[#e02500]' type='submit'>Order Confirm</button>
 
                 </form>
             </div>
