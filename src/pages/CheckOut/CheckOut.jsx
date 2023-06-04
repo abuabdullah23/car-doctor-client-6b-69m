@@ -2,9 +2,12 @@ import React, { useContext } from 'react';
 import { useLoaderData } from 'react-router-dom';
 import bannerCheckout from '../../assets/images/checkout/checkout.png'
 import { AuthContext } from '../../providers/AuthProvider';
+import Swal from 'sweetalert2';
 
 const CheckOut = () => {
     const service = useLoaderData();
+    const { _id, img, title, price, service_id } = service;
+    console.log(service)
     const { user } = useContext(AuthContext);
 
     const handleCheckoutInfoAddToDb = event => {
@@ -17,14 +20,39 @@ const CheckOut = () => {
         const email = form.email.value;
         const message = form.message.value;
         const checkoutInfo = {
-            customerName: name, 
-            date, 
-            amount, 
-            phone, 
-            email, 
+            customerName: name,
+            date,
+            amount,
+            phone,
+            img,
+            email,
+            service: title,
+            id: _id,
+            service_id: service_id,
+            price: price,
             message
         }
-        console.log(checkoutInfo);
+        // console.log(checkoutInfo);
+        fetch('http://localhost:5000/checkout-info', {
+            method: 'POST',
+            headers: {
+                'content-type': 'application/json'
+            },
+            body: JSON.stringify(checkoutInfo)
+        })
+            .then(res => res.json())
+            .then(data => {
+                console.log(data)
+                if (data.insertedId) {
+                    // ==================== Success Alert
+                    Swal.fire({
+                        text: 'Successfully Added Checkout Info!',
+                        icon: 'success',
+                        confirmButtonText: 'Ok'
+                    })
+                    // ==================== Success Alert
+                }
+            })
     }
 
     return (
