@@ -75,26 +75,26 @@ const CheckOut = () => {
                     <div className='md:flex gap-5'>
                         <div className='w-full'>
                             <p className='mt-5 ps-5 text-xl font-semibold'> Name</p>
-                            <input type="text" name="name" id="name" placeholder='Your Name' defaultValue={user?.displayName} className='py-3 px-5 rounded-md border border-slate-300 w-full mt-2' />
+                            <input required type="text" name="name" id="name" placeholder='Your Name' defaultValue={user?.displayName} className='py-3 px-5 rounded-md border border-slate-300 w-full mt-2' />
                         </div>
                         <div className='w-full'>
                             <p className='mt-5 ps-5 text-xl font-semibold'>Date</p>
-                            <input type="date" name="date" id="date" className='py-3 px-5 rounded-md border border-slate-300 w-full mt-2' />
+                            <input required type="date" name="date" id="date" className='py-3 px-5 rounded-md border border-slate-300 w-full mt-2' />
                         </div>
                         <div className='w-full'>
                             <p className='mt-5 ps-5 text-xl font-semibold'>Due Amount</p>
-                            <input type="text" readOnly name="amount" id="amount" defaultValue={'$' + service.price} className='py-3 px-5 rounded-md border border-slate-300 w-full mt-2' />
+                            <input required type="text" readOnly name="amount" id="amount" defaultValue={'$' + service.price} className='py-3 px-5 rounded-md border border-slate-300 w-full mt-2' />
                         </div>
                     </div>
 
                     <div className='md:flex gap-5'>
                         <div className='w-full'>
                             <p className='mt-5 ps-5 text-xl font-semibold'>Your Phone</p>
-                            <input type="number" name="phone" id="phone" placeholder='Your Phone' className='py-3 px-5 rounded-md border border-slate-300 w-full mt-2' />
+                            <input required type="number" name="phone" id="phone" placeholder='Your Phone' className='py-3 px-5 rounded-md border border-slate-300 w-full mt-2' />
                         </div>
                         <div className='w-full'>
                             <p className='mt-5 ps-5 text-xl font-semibold'>Your Email</p>
-                            <input type="email" name="email" id="email" placeholder='Your Email' defaultValue={user?.email} className='py-3 px-5 rounded-md border border-slate-300 w-full mt-2' />
+                            <input required type="email" name="email" id="email" placeholder='Your Email' defaultValue={user?.email} className='py-3 px-5 rounded-md border border-slate-300 w-full mt-2' />
                         </div>
                     </div>
                     <div className='w-full'>

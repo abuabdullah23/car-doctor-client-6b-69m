@@ -1,8 +1,13 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { FaArrowRight } from 'react-icons/fa';
 import { Link } from 'react-router-dom';
+import { AuthContext } from '../../../providers/AuthProvider';
 
 const ServicesCard = ({ service }) => {
+    const {loading} = useContext(AuthContext);
+    if(loading){
+        return <p>Loading...</p>
+    }
 
     const { _id, title, img, price } = service;
 

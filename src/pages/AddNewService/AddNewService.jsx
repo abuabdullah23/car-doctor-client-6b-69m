@@ -11,13 +11,13 @@ const AddNewService = () => {
         const servicePrice = form.servicePrice.value;
         const serviceText = form.serviceText.value;
         const serviceType = form.serviceType.value;
-        const message = form.message.value;
+        const productDescription = form.productDescription.value;
         const addService = {
             serviceName,
             servicePrice,
             serviceText,
             serviceType,
-            message
+            productDescription
         }
         console.log(addService);
     }
@@ -41,28 +41,28 @@ const AddNewService = () => {
                 <div className='md:flex gap-5'>
                     <div className='w-full'>
                         <p className='mt-5 ps-5 text-xl font-semibold'> Service Name</p>
-                        <input type="text" name="serviceName" id="serviceName" placeholder='Service Name' className='py-3 px-5 rounded-md border border-slate-300 w-full mt-2' />
+                        <input required type="text" name="serviceName" id="serviceName" placeholder='Service Name' className='py-3 px-5 rounded-md border border-slate-300 w-full mt-2' />
                     </div>
 
                     <div className='w-full'>
                         <p className='mt-5 ps-5 text-xl font-semibold'> Service Price</p>
-                        <input type="text" name="servicePrice" id="servicePrice" placeholder='Service Price' className='py-3 px-5 rounded-md border border-slate-300 w-full mt-2' />
+                        <input required type="text" name="servicePrice" id="servicePrice" placeholder='Service Price' className='py-3 px-5 rounded-md border border-slate-300 w-full mt-2' />
                     </div>
                 </div>
 
                 <div className='md:flex gap-5'>
                     <div className='w-full'>
                         <p className='mt-5 ps-5 text-xl font-semibold'> Service Text</p>
-                        <input type="text" name="serviceText" id="serviceText" placeholder='Text Here' className='py-3 px-5 rounded-md border border-slate-300 w-full mt-2' />
+                        <input required type="text" name="serviceText" id="serviceText" placeholder='Text Here' className='py-3 px-5 rounded-md border border-slate-300 w-full mt-2' />
                     </div>
                     <div className='w-full'>
                         <p className='mt-5 ps-5 text-xl font-semibold'> Service Type</p>
-                        <input type="text" name="serviceType" id="serviceType" placeholder='Service Type' className='py-3 px-5 rounded-md border border-slate-300 w-full mt-2' />
+                        <input required type="text" name="serviceType" id="serviceType" placeholder='Service Type' className='py-3 px-5 rounded-md border border-slate-300 w-full mt-2' />
                     </div>
                 </div>
                 <div className='w-full'>
-                    <p className='mt-5 ps-5 text-xl font-semibold'>Your Message</p>
-                    <textarea className='py-3 px-5 rounded-md border border-slate-300 w-full mt-2' type="text" name="message" id="message" placeholder='Message' cols="30" rows="10"></textarea>
+                    <p className='mt-5 ps-5 text-xl font-semibold'>Product Description</p>
+                    <textarea className='py-3 px-5 rounded-md border border-slate-300 w-full mt-2' type="text" name="productDescription" id="productDescription" placeholder='productDescription' cols="30" rows="10"></textarea>
                 </div>
                 <button className='w-full py-3 px-5 bg-[#FF3811] rounded-lg mt-5 text-xl font-semibold text-white hover:bg-[#eb2c05]' type='submit'>Add New Service</button>
 

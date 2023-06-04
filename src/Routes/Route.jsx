@@ -6,6 +6,8 @@ import SignUp from "../pages/SignUp/SignUp";
 import ServiceDetails from "../pages/ServiceDetails/ServiceDetails";
 import CheckOut from "../pages/CheckOut/CheckOut";
 import AddNewService from "../pages/AddNewService/AddNewService";
+import BookingCart from "../pages/BookingCart/BookingCart";
+import PrivateRoute from "./PrivateRoute";
 
 const router = createBrowserRouter([
     {
@@ -37,6 +39,10 @@ const router = createBrowserRouter([
             {
                 path: '/add-new-service',
                 element: <AddNewService></AddNewService>
+            },
+            {
+                path: '/order-review',
+                element: <PrivateRoute><BookingCart/></PrivateRoute>
             }
         ]
     },
