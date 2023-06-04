@@ -5,8 +5,28 @@ import { AuthContext } from '../../providers/AuthProvider';
 
 const CheckOut = () => {
     const service = useLoaderData();
-    const {user} = useContext(AuthContext);
-    console.log(service)
+    const { user } = useContext(AuthContext);
+
+    const handleCheckoutInfoAddToDb = event => {
+        event.preventDefault();
+        const form = event.target;
+        const name = form.name.value;
+        const date = form.date.value;
+        const amount = form.amount.value;
+        const phone = form.phone.value;
+        const email = form.email.value;
+        const message = form.message.value;
+        const checkoutInfo = {
+            customerName: name, 
+            date, 
+            amount, 
+            phone, 
+            email, 
+            message
+        }
+        console.log(checkoutInfo);
+    }
+
     return (
         <div className='my-10'>
             <div className='relative'>
@@ -23,11 +43,11 @@ const CheckOut = () => {
 
             {/* form section  */}
             <div className='bg-[#F3F3F3] rounded-lg md:p-16 p-5'>
-                <form >
+                <form onSubmit={handleCheckoutInfoAddToDb}>
                     <div className='md:flex gap-5'>
                         <div className='w-full'>
                             <p className='mt-5 ps-5 text-xl font-semibold'> Name</p>
-                            <input type="text" name="Name" id="Name" placeholder='Your Name' defaultValue={user?.displayName} className='py-3 px-5 rounded-md border border-slate-300 w-full mt-2' />
+                            <input type="text" name="name" id="name" placeholder='Your Name' defaultValue={user?.displayName} className='py-3 px-5 rounded-md border border-slate-300 w-full mt-2' />
                         </div>
                         <div className='w-full'>
                             <p className='mt-5 ps-5 text-xl font-semibold'>Date</p>
@@ -35,7 +55,7 @@ const CheckOut = () => {
                         </div>
                         <div className='w-full'>
                             <p className='mt-5 ps-5 text-xl font-semibold'>Due Amount</p>
-                            <input type="text" readOnly name="amount" id="amount" placeholder={'$' + service.price} className='py-3 px-5 rounded-md border border-slate-300 w-full mt-2' />
+                            <input type="text" readOnly name="amount" id="amount" defaultValue={'$' + service.price} className='py-3 px-5 rounded-md border border-slate-300 w-full mt-2' />
                         </div>
                     </div>
 
@@ -51,7 +71,7 @@ const CheckOut = () => {
                     </div>
                     <div className='w-full'>
                         <p className='mt-5 ps-5 text-xl font-semibold'>Your Message</p>
-                        <textarea className='py-3 px-5 rounded-md border border-slate-300 w-full mt-2' name="message" id="message" placeholder='Message' cols="30" rows="10"></textarea>
+                        <textarea className='py-3 px-5 rounded-md border border-slate-300 w-full mt-2' type="text" name="message" id="message" placeholder='Message' cols="30" rows="10"></textarea>
                     </div>
                     <button className='w-full py-3 px-5 bg-[#FF3811] rounded-lg mt-5 text-xl font-semibold text-white hover:bg-[#eb2c05]' type='submit'>Order Confirm</button>
 

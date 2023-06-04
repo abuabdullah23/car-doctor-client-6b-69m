@@ -42,7 +42,11 @@ const Navbar = () => {
         <li><Link to="/contact">Contact</Link></li>
         <li>
             {
-                user ? <button onClick={handleLogOut}>Log Out</button> : <button><Link to="/login">Login</Link></button>
+                user ? <>
+                    <span><button onClick={handleLogOut}>Log Out</button> </span>
+                    <span><Link to="/add-new-service">Add New Service</Link>
+                    </span></>
+                    : <button><Link to="/login">Login</Link></button>
             }
         </li>
     </>
