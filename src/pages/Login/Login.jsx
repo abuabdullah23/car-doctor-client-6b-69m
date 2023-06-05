@@ -33,6 +33,7 @@ const Login = () => {
                 };
                 console.log(loggedUser)
 
+                // jwt token method for login
                 fetch('http://localhost:5000/jwt', {
                     method: 'POST',
                     headers: {
@@ -44,6 +45,7 @@ const Login = () => {
                     .then(data => {
                         // Warning: local Storage is not secure for store access token
                         localStorage.setItem('car-access-token', data.token);
+                        // redirect after login : step 3
                         navigate(from, { replace: true });
 
                     })
@@ -56,8 +58,7 @@ const Login = () => {
                     icon: 'success',
                     confirmButtonText: 'Ok'
                 })
-                // ==================== Success Alert
-                // redirect after login : step 3
+                // ==================== Success Alert   
             })
             .catch(error => {
                 console.log(error.message)
