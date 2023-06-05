@@ -21,7 +21,14 @@ const BookingCart = () => {
             }
         })
             .then(res => res.json())
-            .then(data => setBookingCart(data))
+            .then(data => {
+                if(!data.error){
+                    setBookingCart(data)
+                }
+                else{
+                    <p>You are no validate user. Please Login again!</p>
+                }
+            })
     }, [url])
 
     //============= handle clear all data

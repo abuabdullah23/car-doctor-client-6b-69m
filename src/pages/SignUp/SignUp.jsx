@@ -19,8 +19,24 @@ const SignUp = () => {
 
         createUser(email, password)
             .then(result => {
-                const createdUser = result.user;
-                console.log(createdUser);
+                const user = result.user;
+                const createdUser = {
+                    email: user.email
+                };
+
+                // jwt token method for login
+                fetch('http://localhost:5000/jwt', {
+                    method: 'POST',
+                    headers: {
+                        'content-type': 'application/json'
+                    },
+                    body: JSON.stringify(createdUser)
+                })
+                    .then(res => res.json())
+                    .then(data => {
+                        // Warning: local Storage is not secure for store access token
+                        localStorage.setItem('car-access-token', data.token);
+                    })
 
                 // ==================== Success Alert
                 Swal.fire({
