@@ -12,13 +12,12 @@ const BookingCart = () => {
     const [bookingCart, setBookingCart] = useState([]);
     console.log(bookingCart)
 
-    const url = `http://localhost:5000/checkout-info?email=${user.email}`
-
+    const url = `http://localhost:5000/checkout-info?email=${user?.email}`
     useEffect(() => {
         fetch(url)
             .then(res => res.json())
             .then(data => setBookingCart(data))
-    }, [])
+    }, [url])
 
     //============= handle clear all data
     const handleClearAllCart = () => {
@@ -75,20 +74,22 @@ const BookingCart = () => {
 
             <div className="overflow-x-auto mt-20">
                 <table className="table">
-                    {/* head */}
-                    <thead>
-                        <tr>
-                            <th>
+                    {/* Table head = conditional rendering */}
+                    {
+                        bookingCart.length > 0 &&
+                        < thead >
+                            <tr className='text-base'>
+                                <th> </th>
+                                <th>Service Image</th>
+                                <th>Service Name</th>
+                                <th>Customer Email</th>
+                                <th>Price</th>
+                                <th>Delivery Date</th>
+                                <th>Status</th>
+                            </tr>
+                        </thead>
+                    }
 
-                            </th>
-                            <th>Service Image</th>
-                            <th>Service Name</th>
-                            <th>Customer Email</th>
-                            <th>Price</th>
-                            <th>Delivery Date</th>
-                            <th>Status</th>
-                        </tr>
-                    </thead>
                     <tbody>
                         {/* rows of booking cart */}
                         {
@@ -103,6 +104,14 @@ const BookingCart = () => {
                 </table>
             </div>
 
+            {/* Table head = conditional rendering. empty cart */}
+            {
+                bookingCart.length < 1 && <div className='py-10 text-center'>
+                    <p className='text-5xl font-thin text-[#FF3811]'>Shopping Cart is Empty!</p>
+                    <h3 className='mt-5 font-semibold text-4xl'>Please Shopping Our Services.</h3>
+                </div>
+            }
+
             <div className='flex justify-between items-center md:px-20 px-5 py-5'>
                 <Link to="/"><button className='py-2 px-4 rounded-md flex items-center gap-4 hover:bg-[#FF3811] hover:text-white'> <FaArrowLeft /> Continue Shopping</button></Link>
 
@@ -111,7 +120,7 @@ const BookingCart = () => {
                     bookingCart.length > 1 && <button onClick={handleClearAllCart} className='py-2 px-4 rounded-md flex items-center gap-4 hover:bg-[#FF3811] hover:text-white'> <FaTrash /> Clear Shopping Cart</button>
                 }
             </div>
-        </div>
+        </div >
     );
 };
 

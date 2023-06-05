@@ -2,7 +2,7 @@ import React from 'react';
 import Swal from 'sweetalert2';
 
 const SingleCart = ({ cart, bookingCart, setBookingCart }) => {
-    const { service, _id, service_id, price, date, img, email } = cart;
+    const { service, _id, service_id, price, date, img, email, status } = cart;
 
     const handleDeleteCart = (id) => {
         Swal.fire({
@@ -28,13 +28,37 @@ const SingleCart = ({ cart, bookingCart, setBookingCart }) => {
                                 title: 'Successfully Deleted',
                                 showConfirmButton: false,
                                 timer: 1500
-                              })
+                            })
                         }
                         const remainingCart = bookingCart.filter(booking => booking._id !== id)
                         setBookingCart(remainingCart)
                     })
             }
         })
+    }
+
+
+    // handle proceed checkout
+    const handlePendingConfirm = id => {
+        fetch(`http://localhost:5000/checkout-info/${_id}`, {
+            method: 'PATCH',
+            headers: {
+                'content-type': 'application/json'
+            },
+            body: JSON.stringify({ status: 'pending' })
+        })
+            .then(res => res.json())
+            .then(data => {
+                console.log(data)
+                if (data.modifiedCount > 0) {
+                    // update state
+                    const remaining = bookingCart.filter(booking => booking._id !== id);
+                    const updated = bookingCart.find(booking => booking._id === id);
+                    updated.status = 'pending'
+                    const newBookingCart = [updated, ...remaining];
+                    setBookingCart(newBookingCart)
+                }
+            })
     }
 
     return (
@@ -64,7 +88,11 @@ const SingleCart = ({ cart, bookingCart, setBookingCart }) => {
             <td className='text-md text-slate-500 font-semibold'>${price}</td>
             <td>{date}</td>
             <td>
-                <button className='py-2 px-4 text-white text-md text-center font-bold bg-[#FF3811] hover:bg-[#e02500] rounded-md'>Pending</button>
+                {
+                    status === 'pending' ? <button className='py-2 px-4 text-[#29B170] text-md text-center font-bold border border-[#29B170] rounded-md'>Approved</button>
+                        :
+                        <button onClick={() => handlePendingConfirm(_id)} className='py-2 px-4 text-white text-md text-center font-bold bg-[#FF3811] hover:bg-[#e02500] rounded-md'>Pending</button>
+                }
             </td>
         </tr>
 
