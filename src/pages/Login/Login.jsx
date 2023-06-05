@@ -27,29 +27,13 @@ const Login = () => {
         // sign in method
         signIn(email, password)
             .then(result => {
-                const user = result.user;
-                const loggedUser = {
-                    email: user.email
-                };
+                const loggedUser = result.user;
                 console.log(loggedUser)
 
-                // jwt token method for login
-                fetch('http://localhost:5000/jwt', {
-                    method: 'POST',
-                    headers: {
-                        'content-type': 'application/json'
-                    },
-                    body: JSON.stringify(loggedUser)
-                })
-                    .then(res => res.json())
-                    .then(data => {
-                        // Warning: local Storage is not secure for store access token
-                        localStorage.setItem('car-access-token', data.token);
-                        // redirect after login : step 3
-                        navigate(from, { replace: true });
-
-                    })
-
+                // jwt token method for login : call from AuthProvider useEffect
+                
+                // redirect after login : step 3
+                navigate(from, { replace: true });
 
                 // ==================== Success Alert
                 Swal.fire({

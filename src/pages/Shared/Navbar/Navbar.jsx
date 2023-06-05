@@ -21,7 +21,7 @@ const Navbar = () => {
                     confirmButtonText: 'Ok'
                 })
                 // ==================== Success Alert
-                localStorage.removeItem('car-access-token')
+               
             })
             .catch((error) => {
                 // ==================== Error Alert

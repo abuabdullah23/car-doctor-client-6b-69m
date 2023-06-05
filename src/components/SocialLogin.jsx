@@ -19,24 +19,11 @@ const SocialLogin = () => {
     const handleGoogleSignIn = () => {
         signInWithPopup(auth, googleProvider)
             .then(result => {
-                const user = result.user;
-                const signedUser = {
-                    email: user.email
-                };
-
-                // jwt token method for login
-                fetch('http://localhost:5000/jwt', {
-                    method: 'POST',
-                    headers: {
-                        'content-type': 'application/json'
-                    },
-                    body: JSON.stringify(signedUser)
-                })
-                    .then(res => res.json())
-                    .then(data => {
-                        // Warning: local Storage is not secure for store access token
-                        localStorage.setItem('car-access-token', data.token);
-                    })
+                const signedUser = result.user;
+                console.log(signedUser)
+               
+                // jwt token method for Social login : call from AuthProvider useEffect
+               
                 // ==================== Success Alert
                 Swal.fire({
                     title: 'Welcome!',

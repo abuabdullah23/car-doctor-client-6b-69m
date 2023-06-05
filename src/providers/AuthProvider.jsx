@@ -34,6 +34,29 @@ const AuthProvider = ({ children }) => {
             setUser(currentUser);
             // console.log('current user', currentUser);
             setLoading(false)
+
+            // ====== jwt token generate method for login, social login, signUp
+            if (currentUser && currentUser.email) {
+                const loggedUser = {
+                    email: currentUser.email
+                }
+                fetch('http://localhost:5000/jwt', {
+                    method: 'POST',
+                    headers: {
+                        'content-type': 'application/json'
+                    },
+                    body: JSON.stringify(loggedUser)
+                })
+                    .then(res => res.json())
+                    .then(data => {
+                        // Warning: local Storage is not secure for store access token
+                        localStorage.setItem('car-access-token', data.token);
+                    })
+            } else {
+                localStorage.removeItem('car-access-token')
+            }
+            // ====== jwt token generate method for login, social login, signUp
+
         });
         return () => {
             return unsubscribe();
