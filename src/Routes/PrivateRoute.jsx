@@ -1,8 +1,11 @@
 import React, { useContext } from 'react';
 import { AuthContext } from '../providers/AuthProvider';
-import { Navigate } from 'react-router-dom';
+import { Navigate, useLocation } from 'react-router-dom';
 
 const PrivateRoute = ({ children }) => {
+
+    // for redirect after login: step 1
+    const location = useLocation();
 
     // These are fixed for after loading value 0 in booking cart route; booking cart route is a private route
     const { user, loading } = useContext(AuthContext);
@@ -15,7 +18,7 @@ const PrivateRoute = ({ children }) => {
         return children;
     }
 
-    return <Navigate to="/login" replace ></Navigate>;
+    return <Navigate state={{ from: location }} to="/login"></Navigate>;
 };
 
 export default PrivateRoute;

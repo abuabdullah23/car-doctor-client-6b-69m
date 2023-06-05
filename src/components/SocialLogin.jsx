@@ -3,8 +3,14 @@ import { FaFacebook, FaGoogle, FaLinkedin } from 'react-icons/fa';
 import { GoogleAuthProvider, getAuth, signInWithPopup } from "firebase/auth";
 import app from '../firebase/firebase-config';
 import Swal from 'sweetalert2';
+import { useLocation, useNavigate } from 'react-router-dom';
 
 const SocialLogin = () => {
+
+    // redirect after login: step 2
+    const navigate = useNavigate();
+    const location = useLocation();
+    const from = location.state?.from?.pathname || '/';
 
     const auth = getAuth(app);
     const googleProvider = new GoogleAuthProvider();
@@ -21,6 +27,8 @@ const SocialLogin = () => {
                     confirmButtonText: 'Ok'
                 })
                 // ==================== Success Alert
+                // redirect after login : step 3
+                navigate(from, { replace: true });
             })
             .catch(error => {
                 // ==================== Error Alert

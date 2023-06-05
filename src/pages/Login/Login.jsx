@@ -1,6 +1,6 @@
 import React, { useContext } from 'react';
 import loginImg from '../../assets/images/login/login.svg'
-import { Link } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { FaFacebook, FaGoogle, FaLinkedin } from 'react-icons/fa';
 import { AuthContext } from '../../providers/AuthProvider';
 import Swal from 'sweetalert2';
@@ -9,6 +9,12 @@ import SocialLogin from '../../components/SocialLogin';
 const Login = () => {
 
     const { signIn } = useContext(AuthContext);
+
+    // redirect after login: step 2
+    const navigate = useNavigate();
+    const location = useLocation();
+    const from = location.state?.from?.pathname || '/';
+
 
     const handleLogin = event => {
         event.preventDefault();
@@ -31,6 +37,8 @@ const Login = () => {
                     confirmButtonText: 'Ok'
                 })
                 // ==================== Success Alert
+                // redirect after login : step 3
+                navigate(from, { replace: true });
             })
             .catch(error => {
                 console.log(error.message)
@@ -68,7 +76,7 @@ const Login = () => {
                 <div className='text-center mt-5'>
                     <p>Or Sign In with</p>
 
-                    <SocialLogin/>
+                    <SocialLogin />
 
                     <p>You have no account?
                         <span className='font-bold text-[#FF3811]'>
