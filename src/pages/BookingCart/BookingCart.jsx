@@ -12,7 +12,7 @@ const BookingCart = () => {
     const [bookingCart, setBookingCart] = useState([]);
     console.log(bookingCart)
 
-    const url = `http://localhost:5000/checkout-info?email=${user?.email}`
+    const url = `https://car-doctor-server-ashen-gamma.vercel.app/checkout-info?email=${user?.email}`
     useEffect(() => {
         fetch(url, {
             method: 'GET',
@@ -43,7 +43,7 @@ const BookingCart = () => {
             confirmButtonText: 'Yes, delete it!'
         }).then((result) => {
             if (result.isConfirmed) {
-                fetch('http://localhost:5000/checkout-info/', {
+                fetch('https://car-doctor-server-ashen-gamma.vercel.app/checkout-info/', {
                     method: 'DELETE'
                 })
                     .then(res => res.json())
@@ -82,6 +82,10 @@ const BookingCart = () => {
                         <h3 className='text-[#FF3811] py-3'>Home-Product Review Details</h3>
                     </div>
                 </div>
+            </div>
+
+            <div>
+                <h3 className='pt-5 text-2xl font-bold'>Your Shopping cart is: {bookingCart.length}</h3>
             </div>
 
             <div className="overflow-x-auto mt-20">

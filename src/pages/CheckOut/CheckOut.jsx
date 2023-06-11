@@ -33,7 +33,7 @@ const CheckOut = () => {
             message
         }
         // console.log(checkoutInfo);
-        fetch('http://localhost:5000/checkout-info', {
+        fetch('https://car-doctor-server-ashen-gamma.vercel.app/checkout-info', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'

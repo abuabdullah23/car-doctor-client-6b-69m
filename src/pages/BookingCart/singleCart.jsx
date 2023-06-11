@@ -15,7 +15,7 @@ const SingleCart = ({ cart, bookingCart, setBookingCart }) => {
             confirmButtonText: 'Yes, delete it!'
         }).then((result) => {
             if (result.isConfirmed) {
-                fetch(`http://localhost:5000/checkout-info/${_id}`, {
+                fetch(`https://car-doctor-server-ashen-gamma.vercel.app/checkout-info/${_id}`, {
                     method: 'DELETE'
                 })
                     .then(res => res.json())
@@ -40,7 +40,7 @@ const SingleCart = ({ cart, bookingCart, setBookingCart }) => {
 
     // handle proceed checkout
     const handlePendingConfirm = id => {
-        fetch(`http://localhost:5000/checkout-info/${_id}`, {
+        fetch(`https://car-doctor-server-ashen-gamma.vercel.app/checkout-info/${_id}`, {
             method: 'PATCH',
             headers: {
                 'content-type': 'application/json'
