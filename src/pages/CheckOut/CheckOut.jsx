@@ -56,7 +56,7 @@ const CheckOut = () => {
     }
 
     return (
-        <div className='my-10'>
+        <div className='my-10  mt-28'>
             <div className='relative'>
                 <img className='w-full' src={bannerCheckout} alt="" />
                 <div className='absolute top-0 left-0 rounded-xl bg-gradient-to-r from-[#000000] to-[#57575711] w-full h-full flex items-center'>

@@ -9,7 +9,7 @@ import { FaArrowLeft, FaArrowRight, FaGoogle } from 'react-icons/fa';
 
 const Carousel = () => {
     return (
-        <div className="carousel w-full">
+        <div className="carousel w-full mt-28">
             {/* ======== Slider1 ============ */}
             <div id="slide1" className="carousel-item relative w-full">
                 <img style={{ height: '512px' }} className='w-full object-cover object-top rounded-lg' src={img1} />

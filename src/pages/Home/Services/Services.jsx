@@ -8,11 +8,13 @@ const Services = () => {
 
     const [services, setServices] = useState([])
 
+    const [asc, setAsc] = useState(true)
+
     useEffect(() => {
-        fetch('https://car-doctor-server-ashen-gamma.vercel.app/services/')
+        fetch(`http://localhost:5000/services?sort=${asc ? 'asc' : 'desc'}`)
             .then(res => res.json())
             .then(data => setServices(data))
-    }, [])
+    }, [asc])
 
     return (
         <div className='my-10'>
@@ -28,6 +30,15 @@ const Services = () => {
                 {
                     user && <Link to="/add-new-service" className='bg-[#FF3811] hover:bg-[#e02500] text-white text-xl font-semibold mt-5 py-3 px-5 rounded-md'>Add New Service</Link>
                 }
+            </div>
+            <div className='ms-10 my-5'>
+                <button className='py-2 px-4 rounded-md bg-slate-300'
+                    onClick={() => setAsc(!asc)}
+                >
+                    {
+                        asc ? 'Price: Hight to Low' : 'Price: Low to High'
+                    }
+                </button>
             </div>
 
             <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 px-10'>

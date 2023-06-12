@@ -73,7 +73,7 @@ const BookingCart = () => {
     }
 
     return (
-        <div>
+        <div className='pt-28'>
             <div className='relative'>
                 <img className='w-full' src={bannerBookingCart} alt="" />
                 <div className='absolute top-0 left-0 rounded-xl bg-gradient-to-r from-[#000000] to-[#57575711] w-full h-full flex items-center'>
